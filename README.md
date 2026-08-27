@@ -20,3 +20,46 @@ SmokeMon is a wearable device that is capable of detecting smoking sessions reli
 ### Session Detection
 
 
+# SmokeMon Data Summary
+
+Source data lives in SharePoint at [SmokeMon/Data](https://nuwildcat.sharepoint.com/:f:/r/sites/FSM-HLSP/Shared%20Documents/SmokeMon/Data?d=we563e50f78154367b50cf600dcb005d7&csf=1&web=1&e=bb0X8A). That folder has **in-lab** and **in-wild** subfolders.
+
+## in-lab
+
+| Paper | Puff Count | Mean volume (ml) | Mean duration (s) | SharePoint Directory |
+| :---- | ---------: | ---------------: | ----------------: | :------------------- |
+| P1 | 13 | 170.06 | 2.62 | `SmokeMon/Data/in-lab/S1` |
+| P2 | 20 | 207.71 | 2.36 | `SmokeMon/Data/in-lab/S2` |
+| P3 | 21 | 92.92 | 1.75 | `SmokeMon/Data/in-lab/S3` |
+| P4 | 25 | 102.92 | 2.53 | `SmokeMon/Data/in-lab/S4` |
+| P5 | 23 | 274.89 | 3.90 | `SmokeMon/Data/in-lab/S5` |
+| P6 | 30 | 244.69 | 4.61 | `SmokeMon/Data/in-lab/S6` |
+| P7 | 23 | 124.22 | 2.91 | `SmokeMon/Data/in-lab/S7` |
+| P8 | 11 | 143.44 | 2.15 | `SmokeMon/Data/in-lab/S8` |
+| **Total / mean** | **166** | **170.11** | **2.85** | |
+
+## in-wild
+
+Puff volume is not available in-wild: there was no ground-truth device, since CReSS Pocket was in-lab only.
+
+| Paper | Puff Count | Mean duration (s) | SharePoint Directory |
+| :---- | ---------: | ----------------: | :------------------- |
+| P9 | 12 | 1.64 | `SmokeMon/Data/in-wild/S9` |
+| P10 | 160 | 4.11 | `SmokeMon/Data/in-wild/S10` |
+| P11 | 177 | 2.75 | `SmokeMon/Data/in-wild/S11` |
+| P12 | 204 | 2.48 | `SmokeMon/Data/in-wild/S12` |
+| P13 | 48 | 1.58 | `SmokeMon/Data/in-wild/S13` |
+| P14 | 173 | 1.46 | `SmokeMon/Data/in-wild/S14` |
+| P15 | 49 | 1.71 | `SmokeMon/Data/in-wild/S15` |
+| P16 | 124 | 3.56 | `SmokeMon/Data/in-wild/S16` |
+| P17 | 69 | 2.57 | `SmokeMon/Data/in-wild/S17` |
+| P18 | 131 | 3.43 | `SmokeMon/Data/in-wild/S18` |
+| P19 | 20 | 1.56 | `SmokeMon/Data/in-wild/S19` |
+| **Total / mean** | **1167** | **2.44** | |
+
+## Data Spec
+
+| System | Sensor | Resolution | FoV |
+| :----- | :----- | :--------- | :-- |
+| SmokeMon | MLX90640 | 32 x 24 | 110 x 75 |
+| ASHES | MLX (confirm model) | confirm | confirm |
