@@ -75,7 +75,7 @@ Both use the same CLI. Run from the directory that contains `train.py`:
 python train.py -c <config.json> [-r <checkpoint>] [-d <gpu_ids>] [--lr <float>] [--bs <int>]
 ```
 
-- **In-lab:** edit `NeuralNetwork/config.json` (`in_lab_dir`, leave-one-out IDs), then `python train.py -c config.json`.
-- **In-wild:** set `data_dir` in a config under `Pipeline/2_Detection/configs/`, then `python train.py -c ./configs/mobilenet_v2_3d/p11.json` (or `./exp_scripts/train.sh`).
+- **In-lab:** update `in_lab_dir` in `NeuralNetwork/config.json` (`data_loader.args`), then `python train.py -c config.json`.
+- **In-wild:** update `data_dir` in `Pipeline/2_Detection/configs/mobilenet_v2_3d/*.json` (`data_loader.args`), then `python train.py -c ./configs/mobilenet_v2_3d/p11.json` (or `./exp_scripts/train.sh`).
 
 Checkpoints go under `saved/`.
