@@ -1,0 +1,54 @@
+{
+    "name": "SmokeMon",
+    "n_gpu": 2,
+
+    "arch": {
+        "type": "MobileNetModel",
+        "args": {}
+    },
+    "data_loader": {
+        "type": "SmokeMonDataLoader",
+        "args":{
+            "in_lab_dir": "../Data/Pilot/Synced/",
+            "in_wild_dir":"../Data/In-Wild/",
+            "in_lab_test_id": -1,
+            "in_wild_test_id":4,
+            "in_lab_droprate":0.9,
+            "in_wild_droprate":0.3,
+            "batch_size": 64,
+            "shuffle": true,
+            "validation_split": 0.15,
+            "num_workers": 4
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.0005,
+            "weight_decay": 0.001,
+            "amsgrad": true
+        }
+    },
+    "loss": "bce_loss",
+    "metrics": [
+        "accuracy", "f1", "precision", "recall", "actual_positive", "actual_negative"
+    ],
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 4,
+            "gamma": 0.9
+        }
+    },
+    "trainer": {
+        "epochs": 70,
+
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        "monitor": "max val_f1",
+        "early_stop": 15,
+
+        "tensorboard": false
+    }
+}

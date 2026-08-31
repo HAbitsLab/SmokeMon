@@ -1,0 +1,60 @@
+{
+    "name": "Mnist_default_flip_rot_45_eraser_temporal_binary_p9",
+    "n_gpu": 1,
+
+    "arch": {
+        "type": "MnistModel_temporal",
+        "args": {}
+    },
+    "data_loader": {
+        "type": "SmokeMonDataLoader",
+        "args":{
+            "data_dir": "/ssd2/thermo-smoking/Data/In-Wild/",
+            "p_list": ["P10","P11","P8","P7","P6"],
+            "label_type": "label",
+            "batch_size": 64,
+            "shuffle": true,
+            "validation_split": 0.3,
+            "num_workers": 4,
+            "balance_ratio": 0,
+            "GT_sessions": true,
+            "temporal_window": 5,
+            "augs": {
+                "vertical_flip": true,
+                "random_rot": 45,
+                "remove_cigg": 0.2
+            }
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args":{
+            "lr": 0.0001,
+            "weight_decay": 0,
+            "amsgrad": true
+        }
+    },
+    "loss": "binary_cross_entropy_with_logits",
+    "metrics": [
+        "accuracy","recall","precision","f1"
+    ],
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 50,
+            "gamma": 0.1
+        }
+    },
+    "trainer": {
+        "epochs": 200,
+
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+
+        "monitor": "min val_loss",
+        "early_stop": 20,
+
+        "tensorboard": false
+    }
+}
