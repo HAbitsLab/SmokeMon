@@ -24,37 +24,37 @@ SmokeMon is a wearable device that is capable of detecting smoking sessions reli
 
 Source data lives in SharePoint at [SmokeMon/Data](https://nuwildcat.sharepoint.com/:f:/r/sites/FSM-HLSP/Shared%20Documents/Grants/SmokeMon/Data?d=w33ad84d9a5cc422eaa8e1e9027a4f0c4&csf=1&web=1&e=oGWFLK). That folder has **in_lab** and **in_wild** subfolders.
 
-## in-lab
+## in_lab
 
 | Paper | Puff Count | Mean volume (ml) | Mean duration (s) | SharePoint Directory |
 | :---- | ---------: | ---------------: | ----------------: | :------------------- |
-| P1 | 13 | 170.06 | 2.62 | `SmokeMon/Data/in-lab/S1` |
-| P2 | 20 | 207.71 | 2.36 | `SmokeMon/Data/in-lab/S2` |
-| P3 | 21 | 92.92 | 1.75 | `SmokeMon/Data/in-lab/S3` |
-| P4 | 25 | 102.92 | 2.53 | `SmokeMon/Data/in-lab/S4` |
-| P5 | 23 | 274.89 | 3.90 | `SmokeMon/Data/in-lab/S5` |
-| P6 | 30 | 244.69 | 4.61 | `SmokeMon/Data/in-lab/S6` |
-| P7 | 23 | 124.22 | 2.91 | `SmokeMon/Data/in-lab/S7` |
-| P8 | 11 | 143.44 | 2.15 | `SmokeMon/Data/in-lab/S8` |
+| P1 | 13 | 170.06 | 2.62 | `SmokeMon/Data/in_lab/P1` |
+| P2 | 20 | 207.71 | 2.36 | `SmokeMon/Data/in_lab/P2` |
+| P3 | 21 | 92.92 | 1.75 | `SmokeMon/Data/in_lab/P3` |
+| P4 | 25 | 102.92 | 2.53 | `SmokeMon/Data/in_lab/P4` |
+| P5 | 23 | 274.89 | 3.90 | `SmokeMon/Data/in_lab/P5` |
+| P6 | 30 | 244.69 | 4.61 | `SmokeMon/Data/in_lab/P6` |
+| P7 | 23 | 124.22 | 2.91 | `SmokeMon/Data/in_lab/P7` |
+| P8 | 11 | 143.44 | 2.15 | `SmokeMon/Data/in_lab/P8` |
 | **Total / mean** | **166** | **170.11** | **2.85** | |
 
-## in-wild
+## in_wild
 
-Puff volume is not available in-wild: there was no ground-truth device, since CReSS Pocket was in-lab only.
+Puff volume is not available in_wild: there was no ground-truth device, since CReSS Pocket was in_lab only.
 
 | Paper | Puff Count | Mean duration (s) | SharePoint Directory |
 | :---- | ---------: | ----------------: | :------------------- |
-| P9 | 12 | 1.64 | `SmokeMon/Data/in-wild/S9` |
-| P10 | 160 | 4.11 | `SmokeMon/Data/in-wild/S10` |
-| P11 | 177 | 2.75 | `SmokeMon/Data/in-wild/S11` |
-| P12 | 204 | 2.48 | `SmokeMon/Data/in-wild/S12` |
-| P13 | 48 | 1.58 | `SmokeMon/Data/in-wild/S13` |
-| P14 | 173 | 1.46 | `SmokeMon/Data/in-wild/S14` |
-| P15 | 49 | 1.71 | `SmokeMon/Data/in-wild/S15` |
-| P16 | 124 | 3.56 | `SmokeMon/Data/in-wild/S16` |
-| P17 | 69 | 2.57 | `SmokeMon/Data/in-wild/S17` |
-| P18 | 131 | 3.43 | `SmokeMon/Data/in-wild/S18` |
-| P19 | 20 | 1.56 | `SmokeMon/Data/in-wild/S19` |
+| P9 | 12 | 1.64 | `SmokeMon/Data/in_wild/P9` |
+| P10 | 160 | 4.11 | `SmokeMon/Data/in_wild/P10` |
+| P11 | 177 | 2.75 | `SmokeMon/Data/in_wild/P11` |
+| P12 | 204 | 2.48 | `SmokeMon/Data/in_wild/P12` |
+| P13 | 48 | 1.58 | `SmokeMon/Data/in_wild/P13` |
+| P14 | 173 | 1.46 | `SmokeMon/Data/in_wild/P14` |
+| P15 | 49 | 1.71 | `SmokeMon/Data/in_wild/P15` |
+| P16 | 124 | 3.56 | `SmokeMon/Data/in_wild/P16` |
+| P17 | 69 | 2.57 | `SmokeMon/Data/in_wild/P17` |
+| P18 | 131 | 3.43 | `SmokeMon/Data/in_wild/P18` |
+| P19 | 20 | 1.56 | `SmokeMon/Data/in_wild/P19` |
 | **Total / mean** | **1167** | **2.44** | |
 
 ## Data Spec
@@ -64,10 +64,10 @@ Puff volume is not available in-wild: there was no ground-truth device, since CR
 | SmokeMon | MLX90640 | 32 x 24 | 110 x 75 |
 | ASHES | MLX (confirm model) | confirm | confirm |
 
-### Training
+## Training
 
-**`NeuralNetwork/`** — in-lab smoking detection.  
-**`Pipeline/2_Detection/`** — in-wild gesture / puff detection.
+**`NeuralNetwork/`** — in_lab smoking detection.  
+**`Pipeline/2_Detection/`** — in_wild gesture / puff detection.
 
 Both use the same CLI. Run from the directory that contains `train.py`:
 
@@ -75,7 +75,7 @@ Both use the same CLI. Run from the directory that contains `train.py`:
 python train.py -c <config.json> [-r <checkpoint>] [-d <gpu_ids>] [--lr <float>] [--bs <int>]
 ```
 
-- **In-lab:** update `in_lab_dir` in `NeuralNetwork/config.json` (`data_loader.args`), then `python train.py -c config.json`.
-- **In-wild:** update `data_dir` in `Pipeline/2_Detection/configs/mobilenet_v2_3d/*.json` (`data_loader.args`), then `python train.py -c ./configs/mobilenet_v2_3d/p11.json` (or `./exp_scripts/train.sh`).
+- **In_lab:** update `in_lab_dir` in `NeuralNetwork/config.json` (`data_loader.args`), then `python train.py -c config.json`.
+- **In_wild:** update `data_dir` in `Pipeline/2_Detection/configs/mobilenet_v2_3d/*.json` (`data_loader.args`), then `python train.py -c ./configs/mobilenet_v2_3d/p11.json` (or `./exp_scripts/train.sh`).
 
 Checkpoints go under `saved/`.
