@@ -22,7 +22,7 @@ SmokeMon is a wearable device that is capable of detecting smoking sessions reli
 
 # SmokeMon Data Summary
 
-Source data lives in SharePoint at [SmokeMon/Data]([https://nuwildcat.sharepoint.com/:f:/r/sites/FSM-HLSP/Shared%20Documents/SmokeMon/Data?d=we563e50f78154367b50cf600dcb005d7&csf=1&web=1&e=bb0X8A](https://nuwildcat.sharepoint.com/:f:/r/sites/FSM-HLSP/Shared%20Documents/Grants/SmokeMon/Data?d=w33ad84d9a5cc422eaa8e1e9027a4f0c4&csf=1&web=1&e=oGWFLK)). That folder has **in_lab** and **in_wild** subfolders.
+Source data lives in SharePoint at [SmokeMon/Data]((https://nuwildcat.sharepoint.com/:f:/r/sites/FSM-HLSP/Shared%20Documents/Grants/SmokeMon/Data?d=w33ad84d9a5cc422eaa8e1e9027a4f0c4&csf=1&web=1&e=oGWFLK)). That folder has **in_lab** and **in_wild** subfolders.
 
 ## in-lab
 
