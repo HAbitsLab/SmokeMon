@@ -63,3 +63,19 @@ Puff volume is not available in-wild: there was no ground-truth device, since CR
 | :----- | :----- | :--------- | :-- |
 | SmokeMon | MLX90640 | 32 x 24 | 110 x 75 |
 | ASHES | MLX (confirm model) | confirm | confirm |
+
+### Training
+
+**`NeuralNetwork/`** — in-lab smoking detection.  
+**`Pipeline/2_Detection/`** — in-wild gesture / puff detection.
+
+Both use the same CLI. Run from the directory that contains `train.py`:
+
+```bash
+python train.py -c <config.json> [-r <checkpoint>] [-d <gpu_ids>] [--lr <float>] [--bs <int>]
+```
+
+- **In-lab:** edit `NeuralNetwork/config.json` (`in_lab_dir`, leave-one-out IDs), then `python train.py -c config.json`.
+- **In-wild:** set `data_dir` in a config under `Pipeline/2_Detection/configs/`, then `python train.py -c ./configs/mobilenet_v2_3d/p11.json` (or `./exp_scripts/train.sh`).
+
+Checkpoints go under `saved/`.
